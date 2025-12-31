@@ -1,0 +1,911 @@
+:root {
+    /* Manual de Marca Sesc 2021 — cromias institucionais (digital / Cor Luz + Web Safe) */
+    --brand-blue: #004bb5; /* Azul Sesc RGB 0,75,181 — Pantone 288 C / Web #004C99 */
+    --brand-blue-web: #004c99;
+    --brand-blue-hover: #003a8c;
+    --brand-navy: #003066; /* Azul Sesc escurecido para barras superiores */
+    --brand-yellow: #f6be00; /* Amarelo Sesc RGB 246,190,0 — Pantone 7408 C */
+    --brand-gray: #747678; /* Cinza médio — Pantone Cool Gray 9 C */
+    --brand-gray-light: #d0d0ce; /* Cinza-claro — Pantone Cool Gray 2 C */
+    --brand-ink: #1c1c1c;
+    --brand-muted: #747678;
+    --brand-bg: #f4f5f6;
+    --brand-surface: #ffffff;
+    --brand-line: #d0d0ce;
+    --brand-font: "Source Sans 3", "Segoe UI", sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: var(--brand-bg);
+    color: var(--brand-ink);
+    font-family: var(--brand-font);
+}
+
+.app-shell {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+    background: var(--brand-bg);
+}
+
+.app-shell__chrome {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+}
+
+.app-utility {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    padding: 0.45rem 1.5rem;
+    background: var(--brand-navy);
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.75rem;
+}
+
+.app-utility a,
+.app-utility button {
+    color: inherit;
+    text-decoration: none;
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+}
+
+.app-utility a:hover,
+.app-utility button:hover {
+    color: #fff;
+}
+
+.app-brandbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 64px;
+    padding: 0 1rem;
+    background: var(--brand-blue);
+    color: #fff;
+    border-bottom: 3px solid var(--brand-yellow);
+}
+
+.app-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.app-brand:hover {
+    color: #fff;
+}
+
+.app-brand__logo {
+    height: 28px;
+    width: auto;
+    display: block;
+}
+
+.app-brand span {
+    font-weight: 400;
+    opacity: 0.9;
+    margin-left: 0.15rem;
+    color: var(--brand-yellow);
+}
+
+.app-brandnav {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex: 1;
+    min-width: 0;
+    flex-wrap: wrap;
+}
+
+.app-brandnav a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.app-brandnav a:hover,
+.app-brandnav a.is-active {
+    color: #fff;
+}
+
+.app-search {
+    display: flex;
+    align-items: center;
+    min-width: 140px;
+    max-width: 200px;
+    flex-shrink: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+    color: #fff;
+}
+
+.app-search input {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    padding: 0.35rem 0;
+}
+
+.app-search input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.app-search input:focus {
+    outline: none;
+}
+
+.app-page-header {
+    width: 100%;
+    background: var(--brand-surface);
+    border-bottom: 1px solid var(--brand-line);
+    padding: 1rem 0 0.85rem;
+}
+
+.app-page-header h1,
+.app-page-title {
+    color: var(--brand-blue);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.app-shell__sidebar {
+    width: 100%;
+    min-width: 0;
+    background: var(--brand-surface);
+    border-right: 1px solid var(--brand-line);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.app-shell__main {
+    min-width: 0;
+    min-height: 0;
+    overflow: auto;
+    background: var(--brand-bg);
+}
+
+.app-shell__main > .roster,
+.app-shell__main > .coverage,
+.app-shell__main > .schedule,
+.app-shell__main > main {
+    max-width: 100%;
+}
+
+.app-shell__main .table-responsive {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.app-sidebar .navbar {
+    background: transparent !important;
+}
+
+.app-sidebar .nav-link {
+    color: var(--brand-ink);
+    border-radius: 0;
+    border-left: 3px solid transparent;
+    padding: 0.7rem 1rem;
+}
+
+.app-sidebar .nav-link:hover,
+.app-sidebar .nav-link.active {
+    color: var(--brand-blue);
+    background: #e8f0fa;
+    border-left-color: var(--brand-yellow);
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--brand-blue) !important;
+    border-color: var(--brand-blue) !important;
+    color: #fff !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--brand-blue-hover) !important;
+    border-color: var(--brand-blue-hover) !important;
+}
+
+.btn-warning,
+.btn-accent {
+    background-color: var(--brand-yellow) !important;
+    border-color: var(--brand-yellow) !important;
+    color: var(--brand-ink) !important;
+}
+
+.btn-neutral,
+.btn-neutral:hover {
+    background: #fff !important;
+    border: 1px solid var(--brand-line) !important;
+    color: var(--brand-ink) !important;
+}
+
+.card {
+    border: 1px solid var(--brand-line) !important;
+    box-shadow: none !important;
+}
+
+.card-header {
+    background: #fff !important;
+    border-bottom: 1px solid var(--brand-line) !important;
+}
+
+.card-header h5 {
+    color: var(--brand-blue);
+    font-weight: 600;
+}
+
+.table thead th {
+    color: var(--brand-muted);
+    font-weight: 600;
+    text-transform: none;
+}
+
+.text-heading {
+    color: var(--brand-ink) !important;
+}
+
+.guest-shell {
+    min-height: 100vh;
+    background: var(--brand-bg);
+}
+
+.guest-main {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+}
+
+.guest-card {
+    width: 100%;
+    max-width: 28rem;
+    background: #fff;
+    border: 1px solid var(--brand-line);
+    padding: 2rem;
+}
+
+.guest-card h1 {
+    color: var(--brand-blue);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.roster {
+    min-height: 100%;
+    background: #fff;
+}
+
+.roster-views {
+    display: flex;
+    gap: 1.25rem;
+    padding: 0.85rem 1.5rem 0;
+    border-bottom: 1px solid var(--brand-line);
+    color: var(--brand-muted);
+    font-size: 0.88rem;
+}
+
+.roster-views__item {
+    padding-bottom: 0.7rem;
+    border-bottom: 2px solid transparent;
+}
+
+.roster-views__item.is-active {
+    color: var(--brand-blue);
+    border-bottom-color: var(--brand-blue);
+    font-weight: 600;
+}
+
+.roster-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 0.85rem 1.5rem;
+    border-bottom: 1px solid var(--brand-line);
+}
+
+.roster-toolbar__title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.05rem;
+}
+
+.roster-new,
+.roster-add {
+    border: 0;
+    background: none;
+    color: var(--brand-blue);
+    font: inherit;
+    font-size: 0.85rem;
+    padding: 0;
+}
+
+.roster-add {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.65rem 1.5rem 0.9rem 2.4rem;
+    color: var(--brand-muted);
+}
+
+.roster-filter {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-width: 240px;
+    margin-left: auto;
+    padding: 0.35rem 0.65rem;
+    border: 1px solid var(--brand-line);
+    border-radius: 6px;
+    color: var(--brand-muted);
+}
+
+.roster-filter input {
+    border: 0;
+    width: 100%;
+    background: transparent;
+    color: var(--brand-ink);
+}
+
+.roster-filter input:focus {
+    outline: none;
+}
+
+.roster-toolbar__meta {
+    color: var(--brand-muted);
+    font-size: 0.8rem;
+}
+
+.roster-empty {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    color: var(--brand-muted);
+}
+
+.roster-group {
+    border-bottom: 1px solid var(--brand-line);
+}
+
+.roster-group__head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    width: 100%;
+    padding: 0.7rem 1.5rem;
+    border: 0;
+    background: #f8fafc;
+    color: inherit;
+    text-align: left;
+}
+
+.roster-group__name {
+    font-weight: 600;
+}
+
+.roster-group__count,
+.roster-group__shift {
+    color: var(--brand-muted);
+    font-size: 0.8rem;
+}
+
+.roster-group__shift {
+    margin-left: auto;
+}
+
+.roster-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 50%;
+    background: #e8f0fb;
+    color: var(--brand-blue);
+    font-size: 0.68rem;
+    font-weight: 700;
+}
+
+.roster-avatar--sm {
+    width: 1.45rem;
+    height: 1.45rem;
+}
+
+.roster-table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+
+.roster-table th,
+.roster-table td {
+    padding: 0.55rem 0.75rem;
+    border-bottom: 1px solid #f0f2f5;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.roster-table th {
+    color: var(--brand-muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.roster-table td:first-child,
+.roster-table th:first-child {
+    padding-left: 1.5rem;
+}
+
+.roster-dot {
+    display: inline-block;
+    width: 0.55rem;
+    height: 0.55rem;
+    margin-right: 0.55rem;
+    border-radius: 2px;
+    vertical-align: middle;
+}
+
+.roster-dot--concluido {
+    background: #62d26f;
+}
+
+.roster-dot--nao_iniciado {
+    background: #c5c9ce;
+}
+
+.roster-dot--folga {
+    background: #7b8490;
+}
+
+.roster-status {
+    display: inline-block;
+    min-width: 7.5rem;
+    padding: 0.28rem 0.55rem;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.roster-status--concluido {
+    background: #7ee08a;
+    color: #14532d;
+}
+
+.roster-status--nao_iniciado {
+    background: #d5d8dc;
+    color: #3f4650;
+}
+
+.roster-status--folga {
+    background: #6b7280;
+    color: #fff;
+}
+
+.roster-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    background: #f4f6f8;
+}
+
+.roster-tag i {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 2px;
+}
+
+.roster-code {
+    display: inline-block;
+    padding: 0.18rem 0.45rem;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.roster-total {
+    background: #fcfcfd;
+    color: var(--brand-muted);
+    font-weight: 600;
+}
+
+.coverage {
+    min-height: 100%;
+    background: #fff;
+    padding: 0.85rem 1rem 1.25rem;
+}
+
+.coverage-toolbar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.coverage-legend {
+    display: flex;
+    gap: 1rem;
+    color: var(--brand-muted);
+    font-size: 0.8rem;
+}
+
+.coverage-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.coverage-swatch {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #d0d5dd;
+}
+
+.coverage-empty {
+    padding: 3rem 1rem;
+    text-align: center;
+    color: var(--brand-muted);
+}
+
+.coverage-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.72rem;
+    table-layout: fixed;
+}
+
+.coverage-table th,
+.coverage-table td {
+    border: 1px solid #d0d5dd;
+    padding: 0.28rem 0.15rem;
+    text-align: center;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.coverage-table thead th,
+.coverage-table tfoot th,
+.coverage-table tfoot td {
+    background: #f3f4f6;
+    font-weight: 700;
+}
+
+.coverage-table__sector,
+.coverage-table tbody th,
+.coverage-table tfoot th {
+    width: 6.5rem;
+    min-width: 5.5rem;
+    text-align: left;
+    padding-left: 0.45rem;
+    background: #fff;
+}
+
+.coverage-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.coverage-label i {
+    width: 1.15rem;
+    height: 1.15rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.coverage-cell {
+    font-variant-numeric: tabular-nums;
+}
+
+.coverage-cell--empty {
+    background: #f8c6c6;
+}
+
+.coverage-cell--low {
+    background: #fff59d;
+}
+
+.coverage-cell--ok {
+    background: #fff;
+}
+
+.coverage-total {
+    background: #f8fafc !important;
+    font-weight: 700;
+}
+
+.schedule {
+    min-height: 100%;
+    background: #fff;
+}
+
+.schedule-banner {
+    background: #f5b7b1;
+    color: #1c1c1c;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0.55rem 1rem;
+}
+
+.schedule-empty {
+    padding: 3rem 1rem;
+    text-align: center;
+    color: var(--brand-muted);
+}
+
+.schedule-table {
+    width: max-content;
+    min-width: 100%;
+    border-collapse: collapse;
+    font-size: 0.65rem;
+}
+
+.schedule-table th,
+.schedule-table td {
+    border: 1px solid #cfd4da;
+    padding: 0.2rem 0.22rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.schedule-table tbody th {
+    text-align: left;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    min-width: 5.5rem;
+    max-width: 7rem;
+    background: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.schedule-table__hours th {
+    background: #f4d03f;
+    font-weight: 700;
+}
+
+.schedule-jornada {
+    min-width: 4.2rem;
+    font-weight: 600;
+}
+
+.schedule-mesa span {
+    display: block;
+    width: 100%;
+    min-width: 1.4rem;
+    height: 1.1rem;
+}
+
+.schedule-cell--post {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #1c1c1c;
+}
+
+.schedule-cell--idle {
+    background: #eef1f4;
+}
+
+.schedule-cell--off {
+    background: #cfd4da;
+}
+
+.person-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.85rem;
+}
+
+.person-card {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1rem 1.1rem;
+    background: #fff;
+    border: 1px solid var(--brand-line);
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.person-card:hover {
+    border-color: var(--brand-blue);
+    background: #f7faff;
+    color: inherit;
+}
+
+.person-card__avatar {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.person-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.person-card__body strong {
+    color: var(--brand-ink);
+}
+
+.person-card__body span {
+    color: var(--brand-muted);
+    font-size: 0.8rem;
+}
+
+.person-card__arrow {
+    color: var(--brand-muted);
+}
+
+.person-hero {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.person-hero__avatar {
+    width: 2.6rem;
+    height: 2.6rem;
+    font-size: 0.85rem;
+}
+
+.person-schedule {
+    background: #fff;
+    min-height: 100%;
+}
+
+.person-schedule__section {
+    padding: 1rem 1.25rem 1.35rem;
+    border-bottom: 1px solid var(--brand-line);
+}
+
+.person-schedule__heading {
+    margin-bottom: 0.85rem;
+}
+
+.person-schedule__heading h2 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--brand-blue);
+    font-weight: 600;
+}
+
+.person-schedule__heading p {
+    margin: 0.2rem 0 0;
+    color: var(--brand-muted);
+    font-size: 0.82rem;
+}
+
+.person-schedule__day {
+    width: max-content;
+    min-width: 100%;
+}
+
+.person-schedule__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    padding: 1rem 1.25rem 1.35rem;
+}
+
+.person-schedule__nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: #e8f0fb;
+    color: var(--brand-blue);
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.person-schedule__nav a.is-active,
+.person-schedule__nav a:hover {
+    background: var(--brand-blue);
+    color: #fff;
+}
+
+.roster-group__name-link {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.roster-group__name-link:hover {
+    color: var(--brand-blue);
+    text-decoration: underline;
+}
+
+@media (max-width: 991.98px) {
+    html,
+    body {
+        overflow: auto;
+        height: auto;
+    }
+
+    .app-shell {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto minmax(0, 1fr);
+        height: auto;
+        max-height: none;
+        min-height: 100dvh;
+        overflow: visible;
+    }
+
+    .app-shell__sidebar {
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+        border-right: 0;
+        border-bottom: 1px solid var(--brand-line);
+    }
+
+    .app-shell__main {
+        overflow: visible;
+    }
+
+    .app-brandnav,
+    .app-search {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1280px) {
+    .app-shell {
+        grid-template-columns: 180px minmax(0, 1fr);
+    }
+
+    .app-brand {
+        font-size: 1.15rem;
+    }
+
+    .app-brandnav a {
+        font-size: 0.85rem;
+    }
+}

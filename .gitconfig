@@ -1,0 +1,35 @@
+[user]
+	name = Augusto Marques
+	email = augustommarques@gmail.com
+
+[core]
+	editor = code
+	autocrlf = input
+	excludesfile = ~/.gitignore_global
+
+[init]
+	defaultBranch = main
+
+[color]
+	ui = auto
+
+[pull]
+	rebase = false
+
+[push]
+	default = simple
+
+# Credenciais só deste repositório (não usa o store global do outro usuário).
+# No primeiro push, use usuário augustommarques e a senha = Personal Access Token.
+[credential]
+	helper =
+	helper = cache --timeout=28800
+[credential "https://github.com"]
+	username = augustommarques
+
+[alias]
+	st = status
+	co = checkout
+	br = branch
+	ci = commit
+	lg = log --oneline --graph --decorate --all
